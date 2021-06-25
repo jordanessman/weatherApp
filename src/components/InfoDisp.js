@@ -8,9 +8,8 @@ export default function InfoDisp (props) {
 
         return(
             <div className='InfoDisp'>
-                <h1 >{props.name}</h1>
-                <h2>{date}</h2>
-                <h2>{time}</h2>
+                <h1 >{props.name.toUpperCase()}</h1>
+                <h6><span id='wds1'>{date}</span> <span id='wds2'>{time}</span></h6>
             </div>
         )
         }

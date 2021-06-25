@@ -6,8 +6,9 @@ const WeatherSearch = (props) => {
     function handleChange (e) {
       v = e.target.value;
     }
-    
+
     function  handleSubmit(e) {
+      e.preventDefault();
       props.onSubmit(v);
   }
     
@@ -21,7 +22,7 @@ return(
       placeholder="Search city..."
       onChange={handleChange}
      />  
-     <button className="searchSub" type = "submit" value="Submit" id='searchId'/>
+     <input className="searchSub" type = "submit" value="Submit" id='searchId'/>
      
       </form>
 </div>
