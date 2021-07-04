@@ -5,7 +5,8 @@ import WeatherSearch from "./components/WeatherSearch"
 import Week from "./components/Week"
 import axios from "axios";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
+import WeatherByDay from "./components/WeatherByDay"
+import { Link } from 'react-router';
 
 const apiKey = {
  key: "852acf544592281a5dacf40786891f24",
@@ -32,6 +33,7 @@ function App() {
   const [city, setCity] = useState('Select City...');
   const [weather, setWeather] = useState({});
   const [weatherWeek, setWeatherWeek] = useState({});
+  const [day, setDay] = useState(0);
    
   
   const changeCity = async (newName) => {
@@ -41,20 +43,33 @@ function App() {
     await setWeather(n);
     await setWeatherWeek(f);
   }
+
+  const setDayPass = (index) => {setDay(index)};
   
   
   return (
     <Router>
       <div className="app">
-        
           <main>
+          <InfoDisp name={city} />
             <Switch>
-              <Route path = "/">
-            <InfoDisp name={city} />
-            <WeatherDisp weather={weather}/>
-            <WeatherSearch onSubmit={changeCity}/>
-            <Week days={weatherWeek}/>
+            <Route path="/days" >
+                <WeatherByDay days={weatherWeek} city={city} day={day} days={weatherWeek}/>
             </Route>
+
+              <Route path = "/home">
+                
+                <WeatherDisp weather={weather}/>
+                <WeatherSearch onSubmit={changeCity}/>
+                <Week days={weatherWeek} setDayPass={setDayPass}/>
+            </Route>
+
+            <Route path='/'>
+                <WeatherDisp weather={weather}/>
+                <WeatherSearch onSubmit={changeCity}/>
+                <Week days={weatherWeek} setDayPass={setDayPass}/>
+            </Route>
+            
             </Switch>
           </main>
       </div>

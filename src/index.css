@@ -192,3 +192,20 @@ main {
  
 
 }
+
+#WeatherByDay {
+  position: absolute;
+  margin: 5%;
+  bottom: 5%;
+  left: 0;
+  height: 75%;
+  width: 90%;
+
+  font-size: xx-large;
+  font-family: 'Times New Roman', Times, serif;
+  color: white;
+  background: rgba(0, 0, 0, .4);
+  border-radius: 20px;
+  vertical-align: text-bottom;
+  text-align: center;
+}
