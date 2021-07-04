@@ -20,7 +20,7 @@ export default function  WeatherDisp (props) {
             high = (((props.weather.main.temp_max - 273) * (9/5)) + 32).toFixed();
             low = (((props.weather.main.temp_min - 273) * (9/5)) + 32).toFixed();
            let weathLogo = document.getElementById('weatherLogo');
-            if(current === "FEW CLOUDS" || current === "SCATTERED CLOUDS" || current === "CLOUDS" || current === "OVERCAST CLOUDS") {
+            if(current === "FEW CLOUDS" || current === "SCATTERED CLOUDS" || current === "CLOUDS" || current === "OVERCAST CLOUDS" || current === "BROKEN CLOUDS") {
                 weathLogo.src = cloud
             }
             else if (current === 'CLEAR SKY') {
@@ -45,7 +45,7 @@ export default function  WeatherDisp (props) {
         <div className='WeatherDisp'>
             <div id = 'logoBox'><img src='' id='weatherLogo'></img></div>
             <h2 >{handleChange(props)}</h2>
-            <span id="wdsm1"><b>H:</b> {high}</span><h4 id='current'>{current}</h4><span id="wdsm2"><b>L:</b> {low}</span>
+            <div id="bottom-line"><span id="wdsm1"><b>H:</b> {high}</span><div id="wdsCurrent"><span id='current'>{current}</span></div><span id="wdsm2"><b>L:</b> {low}</span></div>
             
 
         </div>

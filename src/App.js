@@ -4,6 +4,7 @@ import InfoDisp from "./components/InfoDisp"
 import WeatherSearch from "./components/WeatherSearch"
 import Week from "./components/Week"
 import axios from "axios";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 
 const apiKey = {
@@ -43,15 +44,21 @@ function App() {
   
   
   return (
-    <div className="app">
-      
-        <main>
-          <InfoDisp name={city} />
-          <WeatherDisp weather={weather}/>
-          <WeatherSearch onSubmit={changeCity}/>
-          <Week days={weatherWeek}/>
-        </main>
-    </div>
+    <Router>
+      <div className="app">
+        
+          <main>
+            <Switch>
+              <Route path = "/">
+            <InfoDisp name={city} />
+            <WeatherDisp weather={weather}/>
+            <WeatherSearch onSubmit={changeCity}/>
+            <Week days={weatherWeek}/>
+            </Route>
+            </Switch>
+          </main>
+      </div>
+    </Router>
   );
 }
 

@@ -14,8 +14,9 @@ const WeatherSearch = (props) => {
     
     
 return(
-<div className="searchBox">
+
     <form onSubmit={handleSubmit}>
+      <div id="searchBox">
       <input 
       className="searchBar" 
       type="text" 
@@ -23,9 +24,9 @@ return(
       onChange={handleChange}
      />  
      <input className="searchSub" type = "submit" value="Submit" id='searchId'/>
-     
+     </div>
       </form>
-</div>
+
 )
 }
 

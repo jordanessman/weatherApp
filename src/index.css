@@ -20,32 +20,28 @@ main {
   background-image: linear-gradient(to bottom, rgba(0,0,0,.2), rgba(0,0,0,0.75));
 }
 
-.searchBox {
-  width: 100%;
-  position:absolute;
+#searchBox {
+  margin: 5%;
+  margin-bottom: 5px;
+  width: 90%;
+  position: absolute;
   bottom: 0;
 }
 .searchBar {
+  width: 80%;
   height: 50px;
   padding: 10px;
   padding-right: 20%;
-  margin: 10px;
-  position: absolute;
-  bottom: 0;
-  left: 5%;
   box-shadow: 0px 5px rgba(0, 0, 0, .4);
   font-size: large;
 }
 
 .searchSub {
-  margin: 10px;
+  float: right;
   height: 50px;
   padding: 10px;
-  margin-left: 80%;
-  position: absolute;
-  bottom: 0;
-  right: 20px;
-  width: 15%;
+  right: 5%;
+  width: 20%;
 }
 
 .WeatherDisp {
@@ -55,6 +51,7 @@ main {
   left: 0;
   height: 275px;
   width: 90%;
+
   font-size: xx-large;
   font-family: 'Times New Roman', Times, serif;
   color: white;
@@ -92,6 +89,7 @@ main {
 }
 #logoBox{
   margin: 20px;
+  margin-bottom: 0px;
   text-align: center;
   
 }
@@ -157,27 +155,40 @@ main {
 #wdsm1{
   
   float: left;
-  margin-left: 10%;
   margin-top: 5px;
   border-radius: 5px;
   padding: 3px;
   color: red;
+  width: 25%;
+  
 }
 #wdsm2{
-  
   float: right;
-  margin-right: 10%;
   margin-top: 5px;
   border-radius: 5px;
   padding: 3px;
   color: blue;
+  width: 25%;
 }
-#current{
-  position: absolute;
+#wdsCurrent{
+  margin: auto;
   text-align: center;
-  margin: 40%;
-  width: 10%;
+  font-size: large;
+  text-align: center;
   margin-top: 5px;
   border-radius: 5px;
   padding: 3px;
+}
+#wdsCurrent{
+  width: 100%;
+  min-width: 150px;
+  position: absolute;
+  
+  
+  
+}
+#current{
+  text-align: center;
+ 
+
 }
